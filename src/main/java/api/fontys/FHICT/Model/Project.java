@@ -14,7 +14,6 @@ import java.util.List;
 @Table
 @Data
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-
 public class Project {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id

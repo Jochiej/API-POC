@@ -3,17 +3,19 @@ package api.fontys.FHICT.Controller;
 import api.fontys.FHICT.Logic.UserLogic;
 import api.fontys.FHICT.Model.User;
 import api.fontys.FHICT.Response.*;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin("http://localhost:3000")
+@RequiredArgsConstructor
 @RequestMapping(value="/user")
 @RestController
 public class UserController {
-    @Autowired
-    private UserLogic logic;
+
+    private final UserLogic logic;
 
     @PostMapping(value = "/register")
     public ResponseEntity<RegisterResponse> addUser(@RequestBody User user) {

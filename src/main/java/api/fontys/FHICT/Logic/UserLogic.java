@@ -3,13 +3,14 @@ package api.fontys.FHICT.Logic;
 import api.fontys.FHICT.Exceptions.UserNotFoundException;
 import api.fontys.FHICT.Model.User;
 import api.fontys.FHICT.Repository.UserRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
+@RequiredArgsConstructor
 public class UserLogic {
 
-    @Autowired
     private UserRepository repository;
 
     public void createUser(User user) { repository.save(user);}

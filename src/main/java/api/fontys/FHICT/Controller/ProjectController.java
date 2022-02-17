@@ -4,18 +4,18 @@ import api.fontys.FHICT.Logic.ProjectLogic;
 import api.fontys.FHICT.Model.Project;
 import api.fontys.FHICT.Model.User;
 import api.fontys.FHICT.Response.*;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @CrossOrigin("http://localhost:3000")
+@RequiredArgsConstructor
 @RequestMapping(value="/project")
 @RestController
 public class ProjectController {
 
-    @Autowired
-    private ProjectLogic logic;
+    private final ProjectLogic logic;
 
     @PostMapping(value = "/add")
     public ResponseEntity<addProjectResponse> addProject(@RequestBody Project project) {
